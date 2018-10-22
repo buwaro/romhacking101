@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <h1>Rom Translationhacking</h1>
+					<p>
+						<small>Created by <a href="http://www.buwaro.com">Buwaro</a> / <a href="http://twitter.com/tygorclaw">@TygorClaw</a></small>
+					</p>
+                </section>
+				<section>
+					<aside class="notes">
+                        rom = backup van een spel<br/>
+                        romhacking = backup aanpassen<br/>
+					</aside>
+                    <h2>What is romhacking?</h2>
+
+                </section>
+
+				<section>
+                    <section id="fragments">
+                        <h2>Why should we do it?</h2>
+                        <p><span class="fragment">Graphical/Sound optimizations</span></p>
+                        <p><span class="fragment">New levels/items</span></p>
+                        <p><span class="fragment">Changing the text</span></p>
+                        <aside class="notes">
+                            arcade ports verbeteren:<br />
+                            minder krakend/helder geluid<br />
+                            minder ruis/kleurvoller beeld<br />
+
+                            nieuwe items toevoegen<br />
+
+                            vertalen toegankelijk maakt voor andere mensen<br />
+                        </aside>
+                    </section>
+                </section>
+
+				<section>
+                    <section id="fragments">
+                        <h2>Tools</h2>
+                        <p><span class="fragment">hex editor</span></p>
+                        <p><span class="fragment">relative searcher</span></p>
+                        <p><span class="fragment">(tile browser)</span></p>
+
+                    </section>
+
+                    <section>
+                        <h3>hex editors</h3>
+                        <p>hex workshop</p>
+                        <p>winhex</p>
+                        <p>010 editor</p>
+                        <p>windhex</p>
+                        <img src="images/windhex.png" />
+                        <aside class="notes">
+                            bovenste 3 worth to mension<br/>
+                            betalend<br/>
+                            meer voor forensisch onderzoek en file recovery<br/>
+                            windhex:<br />
+                            minder proffesioneel<br />
+                            speciaal voor romhacking
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Relative searcher</h3>
+                        <p>monkey moore</p>
+                        <p>Rsearch</p>
+                        <img src="images/rsearch.png" />
+
+                        <aside class="notes">
+                            om tekst te kunnen vinden<br />
+                            windhex heeft ook een maar ik gebruik de laatste.<br />
+                            windhex encoding problemen<br />
+                            japanse text zoeken via romaji<br />
+                            romaji = japans hoe het is uitgesproken<br />
+                            later dieper op in gaan
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Tile browser</h3>
+                        <p>infontile</p>
+                        <aside class="notes">
+                            tile = kleine blokje van afbeeldingen<br />
+                            blijkbaar n goe program,<br />
+                            werkt niet in wine.<br />
+                            Font zoeken<br />
+                            geen success met mijn spel
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>The game</h3>
+                    <p>Animal Breeder (gameboy)</p>
+                    <img src="images/ab_title_screen.png" style="float: left;" />
+                    <img src="images/ab_in_game.png" style="float: left;" />
+                    <aside class="notes">
+                        tamagochi achtig<br />
+                        alleen in japans<br />
+                        geen translation patches online<br />
+                    </aside>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Lets begin</h3>
+                        <p>Searching the text</p>
+                        <img src="images/windhex_empty.png" style="width:45%;" />
+                        -->
+                        <img src="images/windhex.png" style="width:45%" />
+
+                        <aside class="notes">
+                            van jiberish naar leesbaar japans
+                            zoeken welke byte overeenkomt met welke letter/teken<br />
+                            1 byte = 8 bits<br />
+                            1 hexadecimaal getal = 4 bits groot<br />
+
+                            daarvoor relative search gebruiken
+                        </aside>
+                    </section>
+                </section>
+                
+                
+                <section>
+                    <h3>Searching the text</h3>
+                    <section>
+                        <br />
+                        <img src="images/animal_name.jpg" />
+                        <span class="fragment">
+                            <img src="images/search_1.png" width="70%" />
+                            <img src="images/search_2.png" />
+                        </span>
+                        <img class="fragment" src="images/rsearch_rion.png" />
+
+                        <aside class="notes">
+                            een woord uit het spel nemen<br />
+                            vertalen met google translate<br />
+                            opzoeken in rsearch
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Changing the text</h3>
+                        <span class="fragment">
+                            <img src="images/found_result.png" />
+                        </span>
+                        <span class="fragment">
+                            <img src="images/changed_result.png" />
+                        </span>
+                        <span class="fragment">
+                            <img src="images/changed_animal_name.png" />
+                        </span>
+                        <aside class="notes">
+                            ga naar de gevonden resultaat in windhex<br />
+                            daar de letters wat aanpassen <br />
+                            van hieruit alle letters vinden
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>found letters</h3>
+                        <pre>Table file:<code class="hljs">
+00=あ
+01=い
+02=う
+03=え
+04=お
+05=か
+06=き
+07=く
+08=け
+09=こ
+0A=さ
+0B=し
+0C=す
+0D=せ
+0E=そ
+0F=た
+10=ち
+11=つ
+12=て
+13=と
+14=な
+15=に
+16=ぬ
+17=ね
+18=の
+19=は
+1A=ひ
+1B=ふ
+1C=へ
+1D=ほ
+1E=ま
+                        </code></pre>
+                    </section>
+                    <section>
+                        <img src="images/windhex.png"/>
+                    </section>
+                </section>
+
+
+                <section>
+                    <h3>Relative searching...but how??</h3>
+                    <section>
+                        <span class="fragment">
+                            <pre>abc alphabet order:<code class="hljs">
+                            a = first letter
+                            b = second letter
+                            c = third letter
+                            </code></pre>
+                        </span>
+                        <span class="fragment">
+                            <pre>file:<code class="hljs">
+                            04 05 06 07 08
+                            </code></pre>
+                        </span>
+                        <span class="fragment">
+                            <pre>results:<code class="hljs">
+                            1) 04 05 06
+                            2) 05 06 07
+                            3) 06 07 08
+                            </code></pre>
+                        </span>
+                        <aside class="notes">
+                            <ul>
+                            <li> hoe werkt het nu juist?</li>
+                            <li>Stel we willen abc zoeken</li>
+                            <li>Stel ge hebt ne file dat er zo uitziet</li>
+                            <li>maakt niet uit of dat a 1 is of 20, zolang dat b en c erop volgen</li>
+                            <li>3 opeenvolgende letters zoeken is een slecht idee. Best een woord zoeken van minstens 4 letters met zo veel mogelijk variatie in</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Workflow</h3>
+                    <section>
+                        <img src="images/text_to_find.png" />
+                    </section>
+                    <section>
+                        <img src="images/hiragana.png" />
+                    </section>
+                    <section>
+                        <pre>alphabet:<code class="hljs">
+あいうえお = aiueo = 00 01 02 03 04
+かきくけこ = kakikukeko = 05 06 07 08 09
+さしすせそ = sashisuseso = 0A 0B 0C 0D 0E
+
+たちつてと = tachitsuteto = 0F 10 11 12 13
+なにぬねの = naninuneno = 14 15 16 17 18
+はひふへほ = wahifueho = 19 1A 1B 1C 1D
+
+まみむめも = mamimumemo = 1E 1F 20 21 22
+やゆよ = yayuyo = 23 24 25
+らりるれろ = rarirurero = 26 27 28 29 2A
+
+わん”。ー = wao".ｰ = 2B 2D ?? ?? ??
+を = 2C
+
+ぁぃぅぇぉ = aiueo = 2E 2F 30 31 32
+ゃゅょっ = ~ya~yu~yo~tsu = 33 34 35 36
+                        </code></pre>
+                    </section>
+                    <section>
+                        <img src="images/found_text.png" />
+                    </section>
+
+                    <aside class="notes">
+                        lage resolutie => tekens niet altijd duidelijk
+                        japans niet handig => zoeken op hex
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>Proof of concept</h1>
+                </section>
+
+                <section data-background-image="images/questions.jpg">
+                    <h1>Questions?</h1>
+                </section>
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
