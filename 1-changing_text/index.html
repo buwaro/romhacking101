@@ -383,16 +383,35 @@
             </span>
           </section>
 
-                <section>
-                    <h3>Workflow</h3>
-                    <section>
-                        <img src="images/text_to_find.png" />
-                    </section>
-                    <section>
-                        <img src="images/hiragana.png" />
-                    </section>
-                    <section>
-                        <pre>alphabet:<code class="hljs">
+          <section>
+            <h3>Workflow</h3>
+            <section>
+              <aside class="notes">
+                * since there is a lot of text to be changed, and since most of us are not that proficient with reading and typing japanese, it can be helpfull to have a workflow that speeds up the translating process.
+                * so lets take this moment in the game and translate it.
+                * starting with the first letter in the dialog box.
+              </aside>
+              <img src="images/text_to_find.png" />
+            </section>
+            <section>
+              <aside class="notes">
+                * here's a screenshot I took from the game it's character creation screen.
+                * now we try to find the same letter in the list and remember te position
+                * which is in this case:
+                * the third row, the first block and the first character
+                * 311
+              </aside>
+              <img src="images/hiragana.png" />
+            </section>
+            <section>
+              <aside class="notes">
+                * i also created a list that is structured in the same way as the screenshot
+                * so now we can use the same coordinations to find our hexadecimal value more easily
+                * and so we get `1E`
+                * so basically it's a little bit like playing battleships in 3D
+                * another reason why i do it this way is because of the low resolution of the gameboy, it is sometimes hard recognize which character it should be.
+              </aside>
+              <pre>alphabet:<code class="hljs">
 あいうえお = aiueo = 00 01 02 03 04
 かきくけこ = kakikukeko = 05 06 07 08 09
 さしすせそ = sashisuseso = 0A 0B 0C 0D 0E
@@ -410,17 +429,16 @@
 
 ぁぃぅぇぉ = aiueo = 2E 2F 30 31 32
 ゃゅょっ = ~ya~yu~yo~tsu = 33 34 35 36
-                        </code></pre>
-                    </section>
-                    <section>
-                        <img src="images/found_text.png" />
-                    </section>
+              </code></pre>
+            </section>
+            <section>
+              <aside class="notes">
+                * after we found a few hexadecimal values, we can just do a hex search through the romfile to find the location of the text
 
-                    <aside class="notes">
-                        lage resolutie => tekens niet altijd duidelijk
-                        japans niet handig => zoeken op hex
-                    </aside>
-                </section>
+              </aside>
+              <img src="images/found_text.png" />
+            </section>
+          </section>
 
                 <section>
                     <h1>Proof of concept</h1>
