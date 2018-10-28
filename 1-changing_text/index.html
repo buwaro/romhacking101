@@ -270,25 +270,28 @@
             </section>
           </section>
 
-                <section>
-                    <section>
-                        <h3>Changing the text</h3>
-                        <span class="fragment">
-                            <img src="images/found_result.png" />
-                        </span>
-                        <span class="fragment">
-                            <img src="images/changed_result.png" />
-                        </span>
-                        <span class="fragment">
-                            <img src="images/changed_animal_name.png" />
-                        </span>
-                        <aside class="notes">
-                            ga naar de gevonden resultaat in windhex<br />
-                            daar de letters wat aanpassen <br />
-                            van hieruit alle letters vinden
-                        </aside>
-                    </section>
-                </section>
+          <section>
+            <section>
+              <aside class="notes">
+                * with that information, we can try to change those values using our hex editor
+                * we go to address `c80`, and to see if it works, i replaced the text using the hexadecimal values of the first letter, which is `76` in our case.
+                * we save the file, run it in our emulator, and yes!
+                * now we now at least the hexadecimal values of 4 letters, and we have a window where we can get some output from the game.
+                * so now we can try to enter several other hexadecimals to find the other letters.
+                * usually all the letters are grouped together in a romfile, so the chance is very high that we can find the other letters by entering `77`, `78`, `79` ...
+              </aside>
+              <h3>Changing the text</h3>
+              <span class="fragment">
+                <img src="images/found_result.png" />
+              </span>
+              <span class="fragment">
+                <img src="images/changed_result.png" />
+              </span>
+              <span class="fragment">
+                <img src="images/changed_animal_name.png" />
+              </span>
+            </section>
+          </section>
 
                 <section>
                     <section>
