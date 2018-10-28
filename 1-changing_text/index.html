@@ -341,40 +341,47 @@
             </section>
           </section>
 
-
-                <section>
-                    <h3>Relative searching...but how??</h3>
-                    <section>
-                        <span class="fragment">
-                            <pre>abc alphabet order:<code class="hljs">
+          <section>
+            <aside class="notes">
+              * ok lets pauze here for a moment.
+              * we managed to find and change the text in a game but,
+              * how did this rseach program suddenly provided us with the right answer?
+              * how does it work?
+              * well, maybe we can answer this question solving this tiny assignment.
+              * Lets say we want to find the word `abc`
+              * in our case, `a` is the first letter of our alphabet, `b` the second and `c` the third
+              * and our file looks like this
+              * can you guess which are the possible results?
+              * hint: "relative" is the keyword here
+              *
+              * these are the 3 possible results
+              * because its going to look for a structure where there is a hexadecimal followed by the previous hexadecimal + 1, followed by the previous hexadecimal + 1
+              * lets say we're looking for `acb` instead, then the program would return nothing. because `c` is 2 numbers higher than a, and there is no place in our file where the following hexadecimal is 2 numbers higher
+              * looking for abc is generally a bad idea because there are lots of data structures that have the same pattern
+              * so the higher the complexity of your word is, the easier it becomes to find it.
+              * I'd also recommend looking for words with no less than 4 characters
+            </aside>
+            <h3>Relative searching...but how??</h3>
+            <span class="fragment">
+              <pre>abc alphabet order:<code class="hljs">
                             a = first letter
                             b = second letter
                             c = third letter
-                            </code></pre>
-                        </span>
-                        <span class="fragment">
-                            <pre>file:<code class="hljs">
+              </code></pre>
+            </span>
+            <span class="fragment">
+              <pre>file:<code class="hljs">
                             04 05 06 07 08
-                            </code></pre>
-                        </span>
-                        <span class="fragment">
-                            <pre>results:<code class="hljs">
+              </code></pre>
+            </span>
+            <span class="fragment">
+              <pre>results:<code class="hljs">
                             1) 04 05 06
                             2) 05 06 07
                             3) 06 07 08
-                            </code></pre>
-                        </span>
-                        <aside class="notes">
-                            <ul>
-                            <li> hoe werkt het nu juist?</li>
-                            <li>Stel we willen abc zoeken</li>
-                            <li>Stel ge hebt ne file dat er zo uitziet</li>
-                            <li>maakt niet uit of dat a 1 is of 20, zolang dat b en c erop volgen</li>
-                            <li>3 opeenvolgende letters zoeken is een slecht idee. Best een woord zoeken van minstens 4 letters met zo veel mogelijk variatie in</li>
-                            </ul>
-                        </aside>
-                    </section>
-                </section>
+              </code></pre>
+            </span>
+          </section>
 
                 <section>
                     <h3>Workflow</h3>
