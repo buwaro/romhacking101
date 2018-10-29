@@ -35,7 +35,7 @@
         </section>
 
         <section data-background="images/about_me_background.png">
-          <aside class="notes">
+          <aside class="notes" data-markdown>
             * I'm Furexa, and when I was a kid,
             * i often wandered pointlessly around the playground, hoping that playtime and school was over ASAP.
             * until someday, something caught my attention.
@@ -61,7 +61,7 @@
 
         <section>
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * What is romhacking?
               * Let's break the word down in 2 pieces:
             </aside>
@@ -69,7 +69,7 @@
           </section>
 
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * is actually this chip on the game cartridge.
               * it holds all the game data.
               * and a romfile is a backup of the data this chip contains.
@@ -79,7 +79,7 @@
           </section>
 
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * the word has been bastardised over the past years
               * but to me, it means
               * changing something to make it work in an unintended way.
@@ -93,7 +93,7 @@
         </section>
 
         <section>
-          <aside class="notes">
+          <aside class="notes" data-markdown>
             * basically everything!
             * to name a few
             * add/remove levels
@@ -138,7 +138,7 @@
 
         <section>
           <section id="fragments">
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * Ok, so what do we need?
             </aside>
             <h2>Tools</h2>
@@ -149,7 +149,7 @@
           </section>
 
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * A hex editor is used to change the data in the romfile
               * Here's a list of some very good hex editors
               * the top 3 are professional tools that are actually ment to use for data recovery and forensics
@@ -167,7 +167,7 @@
           </section>
 
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * A relative searcher is going to help us with finding the text in the romfile.
               * Later in the presentation i'll explain how to use it and how it works
             </aside>
@@ -179,7 +179,7 @@
         </section>
 
         <section>
-          <aside class="notes">
+          <aside class="notes" data-markdown>
             * now the only thing left we need is a game
             * and i ended up choosing this one
             * It's tamagochi like game
@@ -198,7 +198,7 @@
 
         <section>
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * First little BIT of theory which we're gonna need later on
               * 1 bit can be 0 or a 1
               * 1 byte = 8 bits
@@ -211,7 +211,7 @@
             </ul>
           </section>
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * we all are used to count to 10.
               * but for this, we're gonna need a hexadecimal counting system.
               * this means that we can count to 16 before we need another character
@@ -250,7 +250,7 @@
           <section>
             <h3>Searching the text</h3>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * with that out of the way, lets try to find some texts.
                 * first, we choose a word in game that we like to find
                 * then, we're gonna use rsearch to scan through the file
@@ -272,7 +272,7 @@
 
           <section>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * with that information, we can try to change those values using our hex editor
                 * we go to address `c80`, and to see if it works, i replaced the text using the hexadecimal values of the first letter, which is `76` in our case.
                 * we save the file, run it in our emulator, and yes!
@@ -295,7 +295,7 @@
 
           <section>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * after doing that for a while, we can make a list of all the letters we found
               </aside>
               <h3>found letters</h3>
@@ -334,7 +334,7 @@
               </code></pre>
             </section>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * we can then load this list in our hex editor to make to preview the letters correctly
               </aside>
               <img src="images/windhex.png"/>
@@ -342,7 +342,7 @@
           </section>
 
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * ok lets pauze here for a moment.
               * we managed to find and change the text in a game but,
               * how did this rseach program suddenly provided us with the right answer?
@@ -386,7 +386,7 @@
           <section>
             <h3>Workflow</h3>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * since there is a lot of text to be changed, and since most of us are not that proficient with reading and typing japanese, it can be helpfull to have a workflow that speeds up the translating process.
                 * so lets take this moment in the game and translate it.
                 * starting with the first letter in the dialog box.
@@ -394,7 +394,7 @@
               <img src="images/text_to_find.png" />
             </section>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * here's a screenshot I took from the game it's character creation screen.
                 * now we try to find the same letter in the list and remember te position
                 * which is in this case:
@@ -404,7 +404,7 @@
               <img src="images/hiragana.png" />
             </section>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * i also created a list that is structured in the same way as the screenshot
                 * so now we can use the same coordinations to find our hexadecimal value more easily
                 * and so we get `1E`
@@ -432,7 +432,7 @@
               </code></pre>
             </section>
             <section>
-              <aside class="notes">
+              <aside class="notes" data-markdown>
                 * after we found a few hexadecimal values, we can just do a hex search through the romfile to find the location of the text
 
               </aside>
@@ -441,7 +441,7 @@
           </section>
 
           <section>
-            <aside class="notes">
+            <aside class="notes" data-markdown>
               * this game also has a full alphabet inside which we can use to make english text
             </aside>
             <h1>Proof of concept</h1>
